@@ -59,7 +59,7 @@ def load_model(checkpoint_path, device):
 def evaluate(
     val_csv="data/val.csv",
     img_dir="data/train_images",
-    checkpoint="outputs/checkpoints/dr.pth",
+    checkpoint="outputs/checkpoints/dr1.pth",
     batch_size=16
 ):
     device = "cuda" if torch.cuda.is_available() else "cpu"

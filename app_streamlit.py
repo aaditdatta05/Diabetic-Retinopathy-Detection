@@ -16,7 +16,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 @st.cache_resource
 def load_model():
     model = DRModelV2().to(device)
-    ckpt = torch.load("outputs/checkpoints/dr.pth", map_location=device)
+    ckpt = torch.load("outputs/checkpoints/dr1.pth", map_location=device)
     _, skipped = load_state_dict_compatible(model, ckpt["model_state"])
     if skipped:
         st.info(f"Skipped {len(skipped)} incompatible keys from checkpoint.")

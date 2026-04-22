@@ -17,7 +17,7 @@ def train_one_epoch(model, loader, optimizer, device, scaler, criterion):
     running_loss = 0.0
     for imgs, targets in tqdm(loader):
         imgs = imgs.to(device)
-        targets = targets.to(device).long()  # Ordinal labels: 0-4
+        targets = targets.to(device).long()
         optimizer.zero_grad()
         with torch.cuda.amp.autocast(enabled=(scaler is not None)):
             outputs = model(imgs)  # Shape: (batch_size, 4) cumulative logits
